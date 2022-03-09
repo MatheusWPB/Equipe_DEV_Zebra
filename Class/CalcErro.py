@@ -33,9 +33,13 @@ class CalcErro():
         e1 = ((self.z * self.erro1) + (self.x * self.erro2))
         p2 = (self.i * self.l)
         e2 = ((self.l * self.erro3) + (self.i * self.erro4))
-        pt = p1 + p2
-        et = e1+e2
-        print (f'Sua soma deu {pt} e seu erro deu {et}')     
+        if p2 != 0:
+            pt = (p1 * p2)
+            et = (e1 * p2)+ (e2 * p1)
+        else:
+            pt = p1
+            et = e1
+        print (f'Seu produto deu {pt} e seu erro deu {et}')     
 
     def div (self):
         s1 = (self.x / self.z)
@@ -45,10 +49,14 @@ class CalcErro():
             e2 = (((self.l * self.erro3) + (self.i * self.erro4))/(self.i**-2))
         else:
             s2 = 0
-            e2 = 0            
-        st = s1 + s2
-        et = e1 + e2
-        print (f'Sua soma deu {st} e seu erro deu {et}')
+            e2 = 0  
+        if s2 == 0:          
+            st = s1 + s2
+            et = e1 + e2
+        else:
+            st = s1 / s2
+            et = ((e1*s2) + (e2*s1))/(s2**-2)       
+        print (f'Sua divisão deu {st} e seu erro deu {et}')
     
     def cos (self):
         if self.x != 0:
@@ -152,11 +160,6 @@ class CalcErro():
 
 
 s = CalcErro(2 , 0.01, 3, 0.002)
-s.soma()
-s.sub()
+
 s.prod()
 s.div()
-s.cos()
-s.sen()
-s.log()
-s.raiz()
