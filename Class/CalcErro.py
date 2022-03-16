@@ -130,17 +130,17 @@ class CalcErro():
             e1 = (self.erro1)/(2*CalcErro.mt.sqrt(self.x))
             print(f'Seu raiz quadrada foi de {sq1}e o erro foi de {e1}')
         
-        if self.z != 0:
+        elif self.z != 0:
             sq2 = CalcErro.mt.sqrt(self.z)
             e2 = (self.erro2)/(2*CalcErro.mt.sqrt(self.z))
             print(f'Seu raiz quadrada foi de {sq2}e o erro foi de {e2}')
        
-        if self.i != 0:
+        elif self.i != 0:
             sq3 = CalcErro.mt.sqrt(self.i)
             e3 = (self.erro3)/(2*CalcErro.mt.sqrt(self.z))
             print(f'Seu raiz quadrada foi de {sq3}e o erro foi de {e3}')
         
-        if self.l != 0:
+        elif self.l != 0:
             sq4 = CalcErro.mt.sqrt(self.l)
             e4 = (self.erro4)/(2*CalcErro.mt.sqrt(self.l))
             print(f'Seu raiz quadrada foi de {sq4}e o erro foi de {e4}')
@@ -163,3 +163,4 @@ s = CalcErro(2 , 0.01, 3, 0.002)
 
 s.prod()
 s.div()
+s.raiz()
