@@ -1,6 +1,6 @@
 class CalcErro():
     import math as mt
-    def __init__(self, x = 0, erro1= 0, z = 0, erro2 = 0, i = 0, erro3 = 0, l = 0, erro4 = 0 ):
+    def __init__ (self, x = 0, erro1= 0, z = 0, erro2 = 0, i = 0, erro3 = 0, l = 0, erro4 = 0 ):
         self.x = x
         self.erro1 = erro1
         self.z = z
@@ -157,10 +157,8 @@ class CalcErro():
         
 
 
-
-
 s = CalcErro(2 , 0.01, 3, 0.002)
-
+ 
 s.prod()
 s.div()
 s.raiz()
